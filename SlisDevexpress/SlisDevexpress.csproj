@@ -49,6 +49,7 @@
     <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v20.2.Extensions, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.2.UI, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v20.2.Wizard, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -79,6 +80,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserControls\3.LibraryChart\AgeGenderChartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\3.LibraryChart\AgeGenderChartControl.Designer.cs">
+      <DependentUpon>AgeGenderChartControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\2.LibraryInfo\BestRentalControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\2.LibraryInfo\BestRentalControl.Designer.cs">
+      <DependentUpon>BestRentalControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\2.LibraryInfo\BooksInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\2.LibraryInfo\BooksInfoControl.Designer.cs">
+      <DependentUpon>BooksInfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\3.LibraryChart\GenreChartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\3.LibraryChart\GenreChartControl.Designer.cs">
+      <DependentUpon>GenreChartControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\3.LibraryChart\GenreGenderChartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\3.LibraryChart\GenreGenderChartControl.Designer.cs">
+      <DependentUpon>GenreGenderChartControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\2.LibraryInfo\LibraryDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\2.LibraryInfo\LibraryDetailsControl.Designer.cs">
+      <DependentUpon>LibraryDetailsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\1.SeoulLibraryList\LibraryListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\1.SeoulLibraryList\LibraryListControl.Designer.cs">
+      <DependentUpon>LibraryListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\4.WearhousingInfo\NewBooksBuyingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\4.WearhousingInfo\NewBooksBuyingControl.Designer.cs">
+      <DependentUpon>NewBooksBuyingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\2.LibraryInfo\Population,GenreChartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\2.LibraryInfo\Population,GenreChartControl.Designer.cs">
+      <DependentUpon>Population,GenreChartControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\2.LibraryInfo\PopulationInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\2.LibraryInfo\PopulationInfoControl.Designer.cs">
+      <DependentUpon>PopulationInfoControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -141,5 +202,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
