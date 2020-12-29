@@ -180,6 +180,12 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\1.SeoulLibraryList\LibraryListControl.resx">
+      <DependentUpon>LibraryListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\2.LibraryInfo\BestRentalControl.resx">
+      <DependentUpon>BestRentalControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LibrarySelectionControl.resx">
       <DependentUpon>LibrarySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
