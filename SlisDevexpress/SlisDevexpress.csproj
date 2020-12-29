@@ -79,12 +79,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserControls\DistrictSelectionControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\DistrictSelectionControl.Designer.cs">
-      <DependentUpon>DistrictSelectionControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\LibrarySelectionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,9 +118,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\DistrictSelectionControl.resx">
-      <DependentUpon>DistrictSelectionControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LibrarySelectionControl.resx">
       <DependentUpon>LibrarySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
