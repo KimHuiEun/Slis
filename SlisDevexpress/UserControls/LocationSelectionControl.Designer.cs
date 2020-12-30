@@ -1,5 +1,5 @@
 ﻿
-namespace SlisDevexpress
+namespace SlisDevexpress.UserControls
 {
     partial class LocationSelectionControl
     {
@@ -38,7 +38,7 @@ namespace SlisDevexpress
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(18, 14);
+            this.labelControl1.Location = new System.Drawing.Point(13, 14);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(64, 24);
             this.labelControl1.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace SlisDevexpress
             // 
             // lookUpEdit1
             // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(97, 16);
+            this.lookUpEdit1.Location = new System.Drawing.Point(101, 16);
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -60,7 +60,7 @@ namespace SlisDevexpress
             this.Controls.Add(this.lookUpEdit1);
             this.Controls.Add(this.labelControl1);
             this.Name = "LocationSelectionControl";
-            this.Size = new System.Drawing.Size(725, 55);
+            this.Size = new System.Drawing.Size(943, 51);
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -69,7 +69,7 @@ namespace SlisDevexpress
 
         #endregion
 
-        private LabelControl labelControl1;
-        private LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
     }
 }
