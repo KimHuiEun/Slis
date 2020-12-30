@@ -50,16 +50,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao.cs" />
+    <Compile Include="EFLibrary\BaseDao.cs" />
     <Compile Include="Book.cs">
       <DependentUpon>SlisModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BookDao.cs" />
+    <Compile Include="EFLibrary\DbContextCreator.cs" />
+    <Compile Include="EFLibrary\DualKeyDao.cs" />
     <Compile Include="Library.cs">
       <DependentUpon>SlisModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="LibraryDao.cs" />
     <Compile Include="Own.cs">
       <DependentUpon>SlisModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="OwnDao.cs" />
     <Compile Include="Population.cs">
       <DependentUpon>SlisModel.tt</DependentUpon>
     </Compile>
@@ -67,6 +73,8 @@
     <Compile Include="Rent.cs">
       <DependentUpon>SlisModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="RentDao.cs" />
+    <Compile Include="EFLibrary\SingleKeyDao.cs" />
     <Compile Include="SlisModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
