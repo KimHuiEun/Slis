@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Slis.Data
 {
-    public class RentDao
+    public partial class Rent
     {
+
     }
 }

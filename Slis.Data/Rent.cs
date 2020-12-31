@@ -20,7 +20,7 @@ namespace Slis.Data
         public string Isbn { get; set; }
         public Nullable<System.DateTime> ReturnedDate { get; set; }
     
-        public virtual Book Book { get; set; }
         public virtual Library Library { get; set; }
+        public virtual Book Book { get; set; }
     }
 }

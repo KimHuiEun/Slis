@@ -13,7 +13,7 @@
           <Property Name="Title" Type="nvarchar" MaxLength="1000" Nullable="false" />
           <Property Name="Author" Type="nvarchar" MaxLength="1000" Nullable="false" />
           <Property Name="Publisher" Type="nvarchar" MaxLength="1000" Nullable="false" />
-          <Property Name="PublishDate" Type="date" Nullable="false" />
+          <Property Name="PublicationDate" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Library">
           <Key>
@@ -143,19 +143,10 @@
     <edmx:ConceptualModels>
       <Schema Namespace="SlisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="SlisEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Books" EntityType="SlisModel.Book" />
           <EntitySet Name="Libraries" EntityType="SlisModel.Library" />
           <EntitySet Name="Owns" EntityType="SlisModel.Own" />
           <EntitySet Name="Rents" EntityType="SlisModel.Rent" />
           <EntitySet Name="Populations" EntityType="SlisModel.Population" />
-          <AssociationSet Name="FK_Own_Book" Association="SlisModel.FK_Own_Book">
-            <End Role="Book" EntitySet="Books" />
-            <End Role="Own" EntitySet="Owns" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Rent_Book1" Association="SlisModel.FK_Rent_Book1">
-            <End Role="Book" EntitySet="Books" />
-            <End Role="Rent" EntitySet="Rents" />
-          </AssociationSet>
           <AssociationSet Name="FK_Own_Library" Association="SlisModel.FK_Own_Library">
             <End Role="Library" EntitySet="Libraries" />
             <End Role="Own" EntitySet="Owns" />
@@ -164,19 +155,16 @@
             <End Role="Library" EntitySet="Libraries" />
             <End Role="Rent" EntitySet="Rents" />
           </AssociationSet>
+          <EntitySet Name="Books" EntityType="SlisModel.Book" />
+          <AssociationSet Name="FK_Own_Book" Association="SlisModel.FK_Own_Book">
+            <End Role="Book" EntitySet="Books" />
+            <End Role="Own" EntitySet="Owns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rent_Book1" Association="SlisModel.FK_Rent_Book1">
+            <End Role="Book" EntitySet="Books" />
+            <End Role="Rent" EntitySet="Rents" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Book">
-          <Key>
-            <PropertyRef Name="Isbn" />
-          </Key>
-          <Property Name="Isbn" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="Author" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="Publisher" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="PublishDate" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Owns" Relationship="SlisModel.FK_Own_Book" FromRole="Book" ToRole="Own" />
-          <NavigationProperty Name="Rents" Relationship="SlisModel.FK_Rent_Book1" FromRole="Book" ToRole="Rent" />
-        </EntityType>
         <EntityType Name="Library">
           <Key>
             <PropertyRef Name="LibraryId" />
@@ -198,8 +186,8 @@
           <Property Name="Isbn" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="LibraryId" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Book" Relationship="SlisModel.FK_Own_Book" FromRole="Own" ToRole="Book" />
           <NavigationProperty Name="Library" Relationship="SlisModel.FK_Own_Library" FromRole="Own" ToRole="Library" />
+          <NavigationProperty Name="Book" Relationship="SlisModel.FK_Own_Book" FromRole="Own" ToRole="Book" />
         </EntityType>
         <EntityType Name="Rent">
           <Key>
@@ -210,8 +198,8 @@
           <Property Name="LibraryId" Type="Int32" Nullable="false" />
           <Property Name="Isbn" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="ReturnedDate" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Book" Relationship="SlisModel.FK_Rent_Book1" FromRole="Rent" ToRole="Book" />
           <NavigationProperty Name="Library" Relationship="SlisModel.FK_Rent_Library" FromRole="Rent" ToRole="Library" />
+          <NavigationProperty Name="Book" Relationship="SlisModel.FK_Rent_Book1" FromRole="Rent" ToRole="Book" />
         </EntityType>
         <EntityType Name="Population">
           <Key>
@@ -222,6 +210,42 @@
           <Property Name="Total" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
           <Property Name="female" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
           <Property Name="male" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+        </EntityType>
+        <Association Name="FK_Own_Library">
+          <End Type="SlisModel.Library" Role="Library" Multiplicity="1" />
+          <End Type="SlisModel.Own" Role="Own" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library">
+              <PropertyRef Name="LibraryId" />
+            </Principal>
+            <Dependent Role="Own">
+              <PropertyRef Name="LibraryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rent_Library">
+          <End Type="SlisModel.Library" Role="Library" Multiplicity="1" />
+          <End Type="SlisModel.Rent" Role="Rent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library">
+              <PropertyRef Name="LibraryId" />
+            </Principal>
+            <Dependent Role="Rent">
+              <PropertyRef Name="LibraryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="Isbn" />
+          </Key>
+          <Property Name="Isbn" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Author" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Publisher" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="PublicationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Owns" Relationship="SlisModel.FK_Own_Book" FromRole="Book" ToRole="Own" />
+          <NavigationProperty Name="Rents" Relationship="SlisModel.FK_Rent_Book1" FromRole="Book" ToRole="Rent" />
         </EntityType>
         <Association Name="FK_Own_Book">
           <End Type="SlisModel.Book" Role="Book" Multiplicity="1">
@@ -251,47 +275,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Own_Library">
-          <End Type="SlisModel.Library" Role="Library" Multiplicity="1" />
-          <End Type="SlisModel.Own" Role="Own" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Library">
-              <PropertyRef Name="LibraryId" />
-            </Principal>
-            <Dependent Role="Own">
-              <PropertyRef Name="LibraryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Rent_Library">
-          <End Type="SlisModel.Library" Role="Library" Multiplicity="1" />
-          <End Type="SlisModel.Rent" Role="Rent" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Library">
-              <PropertyRef Name="LibraryId" />
-            </Principal>
-            <Dependent Role="Rent">
-              <PropertyRef Name="LibraryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SlisModelStoreContainer" CdmEntityContainer="SlisEntities">
-          <EntitySetMapping Name="Books">
-            <EntityTypeMapping TypeName="SlisModel.Book">
-              <MappingFragment StoreEntitySet="Book">
-                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
-                <ScalarProperty Name="Author" ColumnName="Author" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Isbn" ColumnName="Isbn" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Libraries">
             <EntityTypeMapping TypeName="SlisModel.Library">
               <MappingFragment StoreEntitySet="Library">
@@ -330,6 +319,17 @@
                 <ScalarProperty Name="male" ColumnName="male" />
                 <ScalarProperty Name="female" ColumnName="female" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Books">
+            <EntityTypeMapping TypeName="SlisModel.Book">
+              <MappingFragment StoreEntitySet="Book">
+                <ScalarProperty Name="PublicationDate" ColumnName="PublicationDate" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Isbn" ColumnName="Isbn" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
