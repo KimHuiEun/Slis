@@ -29,10 +29,8 @@ namespace SlisDevexpress
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.grcLibrary = new DevExpress.XtraGrid.GridControl();
             this.grvLibrary = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.libraryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colLibraryId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSpecializedin = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,12 +39,10 @@ namespace SlisDevexpress
             this.colRents = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grcLibrary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvLibrary)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grcLibrary
             // 
-            this.grcLibrary.DataSource = this.libraryBindingSource;
             this.grcLibrary.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grcLibrary.Location = new System.Drawing.Point(0, 0);
             this.grcLibrary.MainView = this.grvLibrary;
@@ -67,10 +63,6 @@ namespace SlisDevexpress
             this.colRents});
             this.grvLibrary.GridControl = this.grcLibrary;
             this.grvLibrary.Name = "grvLibrary";
-            // 
-            // libraryBindingSource
-            // 
-            this.libraryBindingSource.DataSource = typeof(Slis.Data.Library);
             // 
             // colLibraryId
             // 
@@ -135,7 +127,6 @@ namespace SlisDevexpress
             this.Size = new System.Drawing.Size(934, 561);
             ((System.ComponentModel.ISupportInitialize)(this.grcLibrary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvLibrary)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -144,7 +135,6 @@ namespace SlisDevexpress
 
         private DevExpress.XtraGrid.GridControl grcLibrary;
         private DevExpress.XtraGrid.Views.Grid.GridView grvLibrary;
-        private System.Windows.Forms.BindingSource libraryBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colLibraryId;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colSpecializedin;
