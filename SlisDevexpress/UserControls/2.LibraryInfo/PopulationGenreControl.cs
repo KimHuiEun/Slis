@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SlisDevexpress
 {
-    public partial class Population_GenreRentControl : UserControl
+    public partial class PopulationGenreControl : UserControl
     {
-        public Population_GenreRentControl()
+        public PopulationGenreControl()
         {
             InitializeComponent();
         }
