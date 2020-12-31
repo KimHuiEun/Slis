@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Slis.Data
 {
-    class LibraryDao
+    public class LibraryDao
     {
     }
 }
