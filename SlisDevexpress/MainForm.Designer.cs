@@ -37,27 +37,40 @@ namespace SlisDevexpress
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.libraryListControl1 = new SlisDevexpress.LibraryListControl();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.populationInfoControl1 = new SlisDevexpress.PopulationInfoControl();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // fluentDesignFormContainer1
             // 
+            this.fluentDesignFormContainer1.Controls.Add(this.layoutControl1);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fluentDesignFormContainer1.Location = new System.Drawing.Point(298, 39);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
@@ -72,9 +85,9 @@ namespace SlisDevexpress
             this.accordionControlSeparator1,
             this.accordionControlSeparator3,
             this.accordionControlElement1,
-            this.accordionControlElement2,
+            this.ace2,
             this.accordionControlElement4,
-            this.accordionControlElement12});
+            this.ace10});
             this.accordionControl1.Location = new System.Drawing.Point(0, 39);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
@@ -97,50 +110,80 @@ namespace SlisDevexpress
             // accordionControlElement1
             // 
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement6});
+            this.ace1});
             this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "서울시 구립도서관 조회";
             // 
-            // accordionControlElement6
+            // ace1
             // 
-            this.accordionControlElement6.Name = "accordionControlElement6";
-            this.accordionControlElement6.Text = "구립도서관 전체 조회";
-            this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
+            this.ace1.Name = "ace1";
+            this.ace1.Text = "구립도서관 전체 조회";
             // 
-            // accordionControlElement2
+            // ace2
             // 
-            this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement3,
-            this.accordionControlElement5,
-            this.accordionControlElement7,
-            this.accordionControlElement8});
-            this.accordionControlElement2.Expanded = true;
-            this.accordionControlElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
-            this.accordionControlElement2.Name = "accordionControlElement2";
-            this.accordionControlElement2.Text = "구립 도서관 관련 정보";
+            this.ace2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.ace3,
+            this.ace4,
+            this.ace5,
+            this.ace6});
+            this.ace2.Expanded = true;
+            this.ace2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
+            this.ace2.Name = "ace2";
+            this.ace2.Text = "구립 도서관 관련 정보";
             // 
-            // accordionControlElement3
+            // ace3
             // 
-            this.accordionControlElement3.Name = "accordionControlElement3";
-            this.accordionControlElement3.Text = "구 인구 정보";
+            this.ace3.Name = "ace3";
+            this.ace3.Text = "구 인구 정보";
             // 
-            // accordionControlElement5
+            // ace4
             // 
-            this.accordionControlElement5.Name = "accordionControlElement5";
-            this.accordionControlElement5.Text = "도서관 소장 도서 정보";
+            this.ace4.Name = "ace4";
+            this.ace4.Text = "도서관 소장 도서 정보";
+            // 
+            // ace5
+            // 
+            this.ace5.Name = "ace5";
+            this.ace5.Text = "인구 - 장르 대여 정보";
+            // 
+            // ace6
+            // 
+            this.ace6.Name = "ace6";
+            this.ace6.Text = "베스트 대여 도서";
             // 
             // accordionControlElement4
             // 
             this.accordionControlElement4.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement9,
-            this.accordionControlElement10,
-            this.accordionControlElement11});
+            this.ace7,
+            this.ace8,
+            this.ace9});
             this.accordionControlElement4.Expanded = true;
             this.accordionControlElement4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement4.ImageOptions.Image")));
             this.accordionControlElement4.Name = "accordionControlElement4";
             this.accordionControlElement4.Text = "구립 도서관 통계 자료";
+            // 
+            // ace7
+            // 
+            this.ace7.Name = "ace7";
+            this.ace7.Text = "장르별 대여 통계";
+            // 
+            // ace8
+            // 
+            this.ace8.Name = "ace8";
+            this.ace8.Text = "연령·성별 대여 통계";
+            // 
+            // ace9
+            // 
+            this.ace9.Name = "ace9";
+            this.ace9.Text = "장르·성별 대여 통계";
+            // 
+            // ace10
+            // 
+            this.ace10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement12.ImageOptions.Image")));
+            this.ace10.Name = "ace10";
+            this.ace10.Text = "도서관 신간 입고 정보";
             // 
             // fluentDesignFormControl1
             // 
@@ -165,36 +208,65 @@ namespace SlisDevexpress
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "simpleButton1";
             // 
-            // accordionControlElement7
+            // layoutControl1
             // 
-            this.accordionControlElement7.Name = "accordionControlElement7";
-            this.accordionControlElement7.Text = "인구 - 장르 대여 정보";
+            this.layoutControl1.Controls.Add(this.populationInfoControl1);
+            this.layoutControl1.Controls.Add(this.libraryListControl1);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2});
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(938, 331, 812, 500);
+            this.layoutControl1.Root = this.Root;
+            this.layoutControl1.Size = new System.Drawing.Size(741, 685);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
             // 
-            // accordionControlElement8
+            // Root
             // 
-            this.accordionControlElement8.Name = "accordionControlElement8";
-            this.accordionControlElement8.Text = "베스트 대여 도서";
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(741, 685);
             // 
-            // accordionControlElement9
+            // libraryListControl1
             // 
-            this.accordionControlElement9.Name = "accordionControlElement9";
-            this.accordionControlElement9.Text = "장르별 대여 통계";
+            this.libraryListControl1.Location = new System.Drawing.Point(12, 12);
+            this.libraryListControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.libraryListControl1.Name = "libraryListControl1";
+            this.libraryListControl1.Size = new System.Drawing.Size(717, 661);
+            this.libraryListControl1.TabIndex = 4;
+            this.libraryListControl1.Visible = false;
             // 
-            // accordionControlElement10
+            // layoutControlItem1
             // 
-            this.accordionControlElement10.Name = "accordionControlElement10";
-            this.accordionControlElement10.Text = "연령·성별 대여 통계";
+            this.layoutControlItem1.Control = this.libraryListControl1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(721, 665);
+            this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
-            // accordionControlElement11
+            // populationInfoControl1
             // 
-            this.accordionControlElement11.Name = "accordionControlElement11";
-            this.accordionControlElement11.Text = "장르·성별 대여 통계";
+            this.populationInfoControl1.Location = new System.Drawing.Point(148, 653);
+            this.populationInfoControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.populationInfoControl1.Name = "populationInfoControl1";
+            this.populationInfoControl1.Size = new System.Drawing.Size(581, 20);
+            this.populationInfoControl1.TabIndex = 5;
+            this.populationInfoControl1.Visible = false;
             // 
-            // accordionControlElement12
+            // layoutControlItem2
             // 
-            this.accordionControlElement12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement12.ImageOptions.Image")));
-            this.accordionControlElement12.Name = "accordionControlElement12";
-            this.accordionControlElement12.Text = "도서관 신간 입고 정보";
+            this.layoutControlItem2.Control = this.populationInfoControl1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 641);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(721, 24);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(50, 20);
             // 
             // MainForm
             // 
@@ -210,9 +282,15 @@ namespace SlisDevexpress
             this.Name = "MainForm";
             this.NavigationControl = this.accordionControl1;
             this.Text = "Seoul Library Information System";
+            this.fluentDesignFormContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,18 +303,24 @@ namespace SlisDevexpress
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator3;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace3;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement10;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement11;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement12;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace5;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace6;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace7;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace8;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace9;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace10;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private PopulationInfoControl populationInfoControl1;
+        private LibraryListControl libraryListControl1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }

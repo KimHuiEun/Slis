@@ -17,12 +17,29 @@ namespace SlisDevexpress
             InitializeComponent();
         }
 
-
-        private void accordionControlElement6_Click(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
-            TotalLibraryForm showForm = new TotalLibraryForm();
-            showForm.Show();
+            base.OnLoad(e);
+
+            if (DesignMode)
+                return;
+
+            _userControls.Add(libraryListControl1);
+            //_userControls.Add
+            _userControls.Add(populationInfoControl1);
+            //_userControls.Add
+            //_userControls.Add
+            //_userControls.Add
+            //_userControls.Add
+            //_userControls.Add
+            //_userControls.Add
+            //_userControls.Add
+            //_userControls.Add
+            //_userControls.Add
+
         }
+
+        private List<UserControl> _userControls = new List<UserControl>();
 
     }
 }
