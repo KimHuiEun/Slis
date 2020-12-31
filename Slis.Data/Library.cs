@@ -23,8 +23,10 @@ namespace Slis.Data
     
         public int LibraryId { get; set; }
         public string Name { get; set; }
-        public string Specializedin { get; set; }
+        public string HomePage { get; set; }
         public string Location { get; set; }
+        public string Address { get; set; }
+        public string SpecializedIn { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Own> Owns { get; set; }
