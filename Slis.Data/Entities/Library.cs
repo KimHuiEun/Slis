@@ -8,6 +8,9 @@ namespace Slis.Data
 {
     public partial class Library
     {
-
+        public override string ToString()
+        {
+            return $"{LibraryId} / {Name} / {HomePage} / {Location} / {Address} / {SpecializedIn}";
+        }
     }
 }

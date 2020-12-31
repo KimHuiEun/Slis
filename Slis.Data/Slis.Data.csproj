@@ -60,6 +60,8 @@
     <Compile Include="EFLibrary\DualKeyDao.cs" />
     <Compile Include="Entities\Book.cs" />
     <Compile Include="Entities\Library.cs" />
+    <Compile Include="Entities\Own.cs" />
+    <Compile Include="Entities\Population.cs" />
     <Compile Include="Entities\Rent.cs" />
     <Compile Include="Library.cs">
       <DependentUpon>SlisModel.tt</DependentUpon>
