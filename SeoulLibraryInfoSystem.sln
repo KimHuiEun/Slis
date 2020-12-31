@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlisDevexpress", "SlisDevex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slis.WebApi", "Slis.WebApi\Slis.WebApi.csproj", "{E3DAFABB-3B54-4AC4-8D84-72AAE76021CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slis.Console", "Slis.Console\Slis.Console.csproj", "{1493A43B-3EE2-4A01-BF21-7B5065BD9DAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slis.ConsoleUI", "Slis.Console\Slis.ConsoleUI.csproj", "{1493A43B-3EE2-4A01-BF21-7B5065BD9DAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

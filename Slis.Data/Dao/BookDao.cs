@@ -10,6 +10,8 @@ namespace Slis.Data
 {
     public class BookDao : SingleKeyDao<Book, string>
     {
+        internal BookDao() { }
+
         protected override Expression<Func<Book, string>> KeySelector => x => x.Isbn;
     }
 }
