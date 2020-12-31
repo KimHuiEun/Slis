@@ -168,7 +168,7 @@
         vLjw/4Dg5zy3fNx7r/9l6On9HwU/jA5prQAiAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="accordionControlElement2.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ace2.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABd0RVh0VGl0
         bGUATGVnZW5kO0NoYXJ0O0xpc3SwL5DUAAAGN0lEQVRYR72X+W9UVRTHQUVE9s3lvxCNiRACEpYYDb9A
@@ -211,7 +211,7 @@
         KlAFqkAV8IMtyWEmOcwkh3lsegFkZKUBpGO2dwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="accordionControlElement12.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ace10.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAABzJJREFUWEfV
         lmtQlGUUxxWUyWb8UNbUjH4RuawQiqiJqSuXAqTdxX3fXRYWdmUFBLksiLqAYCigXATU0TS17PKltBxH
@@ -248,7 +248,7 @@
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>50</value>
+    <value>34</value>
   </metadata>
   <metadata name="fluentFormDefaultManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

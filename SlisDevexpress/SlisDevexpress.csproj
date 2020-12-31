@@ -44,7 +44,6 @@
     <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.2.UI, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -52,7 +51,6 @@
     <Reference Include="DevExpress.XtraCharts.v20.2.Extensions, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v20.2.UI, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v20.2.Wizard, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -138,11 +136,11 @@
     <Compile Include="UserControls\4.WearhousingInfo\NewBooksBuyingControl.Designer.cs">
       <DependentUpon>NewBooksBuyingControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\2.LibraryInfo\Population,GenreChartControl.cs">
+    <Compile Include="UserControls\2.LibraryInfo\PopulationGenreControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\2.LibraryInfo\Population,GenreChartControl.Designer.cs">
-      <DependentUpon>Population,GenreChartControl.cs</DependentUpon>
+    <Compile Include="UserControls\2.LibraryInfo\PopulationGenreControl.Designer.cs">
+      <DependentUpon>PopulationGenreControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\2.LibraryInfo\PopulationInfoControl.cs">
       <SubType>UserControl</SubType>

@@ -1,7 +1,7 @@
 ﻿
 namespace SlisDevexpress
 {
-    partial class Population_GenreRentControl
+    partial class PopulationGenreControl
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
