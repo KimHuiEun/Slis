@@ -5,15 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9cf081f2b34040cdb827eac19401c65c" Name="Diagram1">
-        <EntityTypeShape EntityType="SlisModel.Book" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SlisModel.Library" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SlisModel.Own" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="SlisModel.Rent" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SlisModel.Population" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
-        <AssociationConnector Association="SlisModel.FK_Own_Book" ManuallyRouted="false" />
-        <AssociationConnector Association="SlisModel.FK_Rent_Book1" ManuallyRouted="false" />
-        <AssociationConnector Association="SlisModel.FK_Own_Library" ManuallyRouted="false" />
-        <AssociationConnector Association="SlisModel.FK_Rent_Library" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SlisModel.Book" Width="1.5" PointX="0.75" PointY="3.5" />
+        <EntityTypeShape EntityType="SlisModel.Library" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="SlisModel.Own" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="SlisModel.Rent" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="SlisModel.Population" Width="1.5" PointX="5.75" PointY="1.875" />
+        <AssociationConnector Association="SlisModel.FK_Own_Book" />
+        <AssociationConnector Association="SlisModel.FK_Rent_Book1" />
+        <AssociationConnector Association="SlisModel.FK_Own_Library" />
+        <AssociationConnector Association="SlisModel.FK_Rent_Library" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
