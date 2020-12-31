@@ -179,6 +179,18 @@
     <EmbeddedResource Include="UserControls\2.LibraryInfo\LibraryDetailsControl.resx">
       <DependentUpon>LibraryDetailsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\2.LibraryInfo\PopulationGenreControl.resx">
+      <DependentUpon>PopulationGenreControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\3.LibraryChart\AgeGenderChartControl.resx">
+      <DependentUpon>AgeGenderChartControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\3.LibraryChart\GenreChartControl.resx">
+      <DependentUpon>GenreChartControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\3.LibraryChart\GenreGenderChartControl.resx">
+      <DependentUpon>GenreGenderChartControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\4.WearhousingInfo\NewBooksBuyingControl.resx">
       <DependentUpon>NewBooksBuyingControl.cs</DependentUpon>
     </EmbeddedResource>

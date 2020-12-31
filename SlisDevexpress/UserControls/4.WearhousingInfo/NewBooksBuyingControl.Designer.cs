@@ -29,18 +29,30 @@ namespace SlisDevexpress
         /// </summary>
         private void InitializeComponent()
         {
+            this.titleSearchControl1 = new SlisDevexpress.TitleSearchControl();
             this.SuspendLayout();
+            // 
+            // titleSearchControl1
+            // 
+            this.titleSearchControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titleSearchControl1.Location = new System.Drawing.Point(0, 0);
+            this.titleSearchControl1.Name = "titleSearchControl1";
+            this.titleSearchControl1.Size = new System.Drawing.Size(810, 54);
+            this.titleSearchControl1.TabIndex = 0;
             // 
             // NewBooksBuyingControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.titleSearchControl1);
             this.Name = "NewBooksBuyingControl";
-            this.Size = new System.Drawing.Size(934, 512);
+            this.Size = new System.Drawing.Size(810, 554);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private TitleSearchControl titleSearchControl1;
     }
 }
