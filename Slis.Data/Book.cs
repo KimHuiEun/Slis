@@ -26,6 +26,7 @@ namespace Slis.Data
         public string Author { get; set; }
         public string Publisher { get; set; }
         public System.DateTime PublicationDate { get; set; }
+        public string SetIsbn { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Own> Owns { get; set; }

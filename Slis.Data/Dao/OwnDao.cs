@@ -10,6 +10,8 @@ namespace Slis.Data
 {
     public class OwnDao : DualKeyDao<Own, int, int>
     {
+        internal OwnDao() { }
 
+        //protected override Expression<Func<Own, int, int>> KeySelector =>   
     }
 }

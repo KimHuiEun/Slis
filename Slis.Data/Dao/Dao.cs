@@ -8,12 +8,14 @@ namespace Slis.Data
 {
     public class Dao
     {
-        public static BookDao Book = new BookDao();
+        public static BookDao Book { get; } = new BookDao();
 
-        public static LibraryDao Customer = new LibraryDao();
+        public static LibraryDao Library { get; } = new LibraryDao();
 
-        public static RentDao Rent = new RentDao();
+        public static PopulationDao Population { get; } = new PopulationDao();
 
-        public static OwnDao Own = new OwnDao();
+        public static RentDao Rent { get; } = new RentDao();
+
+        public static OwnDao Own { get; } = new OwnDao();
     }
 }

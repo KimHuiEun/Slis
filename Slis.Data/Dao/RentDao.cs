@@ -10,6 +10,8 @@ namespace Slis.Data
 {
     public class RentDao : SingleKeyDao<Rent, int>
     {
+        internal RentDao() { }
+
         protected override Expression<Func<Rent, int>> KeySelector => x => x.RentId;
     }
 }

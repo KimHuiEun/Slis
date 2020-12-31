@@ -10,6 +10,16 @@ namespace Slis.Data
 {
     public class LibraryDao : SingleKeyDao<Library, int>
     {
+        internal LibraryDao() { }
+
         protected override Expression<Func<Library, int>> KeySelector => x => x.LibraryId;
+
+        public Dictionary<string, int> ToDictionary()
+        {
+            using (var context = DbContextCreator.Create())
+            {
+                return context.Libraries.ToDictionary(x => x.Location, x => x.LibraryId);
+            }
+        }
     }
 }

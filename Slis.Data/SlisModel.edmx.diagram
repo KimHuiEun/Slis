@@ -8,12 +8,13 @@
         <EntityTypeShape EntityType="SlisModel.Library" Width="1.5" PointX="0.75" PointY="7" />
         <EntityTypeShape EntityType="SlisModel.Own" Width="1.5" PointX="3" PointY="0.75" />
         <EntityTypeShape EntityType="SlisModel.Rent" Width="1.5" PointX="3" PointY="3.5" />
-        <EntityTypeShape EntityType="SlisModel.Population" Width="1.5" PointX="5.75" PointY="1.875" />
         <AssociationConnector Association="SlisModel.FK_Own_Library" />
         <AssociationConnector Association="SlisModel.FK_Rent_Library" />
         <EntityTypeShape EntityType="SlisModel.Book" Width="1.5" PointX="0.75" PointY="2.125" />
         <AssociationConnector Association="SlisModel.FK_Own_Book" />
         <AssociationConnector Association="SlisModel.FK_Rent_Book1" />
+        <EntityTypeShape EntityType="SlisModel.Population" Width="1.5" PointX="3" PointY="7.375" />
+        <AssociationConnector Association="SlisModel.FK_Population_Library" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

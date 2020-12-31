@@ -19,6 +19,7 @@ namespace Slis.Data
         {
             this.Owns = new HashSet<Own>();
             this.Rents = new HashSet<Rent>();
+            this.Populations = new HashSet<Population>();
         }
     
         public int LibraryId { get; set; }
@@ -32,5 +33,7 @@ namespace Slis.Data
         public virtual ICollection<Own> Owns { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rent> Rents { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Population> Populations { get; set; }
     }
 }
