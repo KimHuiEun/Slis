@@ -29,8 +29,16 @@ namespace SlisDevexpress
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // NewBooksBuyingControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "NewBooksBuyingControl";
+            this.Size = new System.Drawing.Size(934, 512);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

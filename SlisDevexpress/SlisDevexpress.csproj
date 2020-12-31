@@ -179,6 +179,9 @@
     <EmbeddedResource Include="UserControls\2.LibraryInfo\LibraryDetailsControl.resx">
       <DependentUpon>LibraryDetailsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\4.WearhousingInfo\NewBooksBuyingControl.resx">
+      <DependentUpon>NewBooksBuyingControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TitleSearchControl.resx">
       <DependentUpon>TitleSearchControl.cs</DependentUpon>
     </EmbeddedResource>
