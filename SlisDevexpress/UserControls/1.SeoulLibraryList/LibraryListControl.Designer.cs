@@ -29,44 +29,127 @@ namespace SlisDevexpress
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.grcLibrary = new DevExpress.XtraGrid.GridControl();
+            this.grvLibrary = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.libraryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colLibraryId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSpecializedin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLocation = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOwns = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRents = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.grcLibrary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvLibrary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridControl1
+            // grcLibrary
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(934, 561);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.grcLibrary.DataSource = this.libraryBindingSource;
+            this.grcLibrary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grcLibrary.Location = new System.Drawing.Point(0, 0);
+            this.grcLibrary.MainView = this.grvLibrary;
+            this.grcLibrary.Name = "grcLibrary";
+            this.grcLibrary.Size = new System.Drawing.Size(934, 561);
+            this.grcLibrary.TabIndex = 0;
+            this.grcLibrary.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvLibrary});
             // 
-            // gridView1
+            // grvLibrary
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.grvLibrary.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colLibraryId,
+            this.colName,
+            this.colSpecializedin,
+            this.colLocation,
+            this.colOwns,
+            this.colRents});
+            this.grvLibrary.GridControl = this.grcLibrary;
+            this.grvLibrary.Name = "grvLibrary";
+            // 
+            // libraryBindingSource
+            // 
+            this.libraryBindingSource.DataSource = typeof(Slis.Data.Library);
+            // 
+            // colLibraryId
+            // 
+            this.colLibraryId.FieldName = "LibraryId";
+            this.colLibraryId.MinWidth = 25;
+            this.colLibraryId.Name = "colLibraryId";
+            this.colLibraryId.Visible = true;
+            this.colLibraryId.VisibleIndex = 0;
+            this.colLibraryId.Width = 94;
+            // 
+            // colName
+            // 
+            this.colName.FieldName = "Name";
+            this.colName.MinWidth = 25;
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 1;
+            this.colName.Width = 94;
+            // 
+            // colSpecializedin
+            // 
+            this.colSpecializedin.FieldName = "Specializedin";
+            this.colSpecializedin.MinWidth = 25;
+            this.colSpecializedin.Name = "colSpecializedin";
+            this.colSpecializedin.Visible = true;
+            this.colSpecializedin.VisibleIndex = 2;
+            this.colSpecializedin.Width = 94;
+            // 
+            // colLocation
+            // 
+            this.colLocation.FieldName = "Location";
+            this.colLocation.MinWidth = 25;
+            this.colLocation.Name = "colLocation";
+            this.colLocation.Visible = true;
+            this.colLocation.VisibleIndex = 3;
+            this.colLocation.Width = 94;
+            // 
+            // colOwns
+            // 
+            this.colOwns.FieldName = "Owns";
+            this.colOwns.MinWidth = 25;
+            this.colOwns.Name = "colOwns";
+            this.colOwns.Visible = true;
+            this.colOwns.VisibleIndex = 4;
+            this.colOwns.Width = 94;
+            // 
+            // colRents
+            // 
+            this.colRents.FieldName = "Rents";
+            this.colRents.MinWidth = 25;
+            this.colRents.Name = "colRents";
+            this.colRents.Visible = true;
+            this.colRents.VisibleIndex = 5;
+            this.colRents.Width = 94;
             // 
             // LibraryListControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.grcLibrary);
             this.Name = "LibraryListControl";
             this.Size = new System.Drawing.Size(934, 561);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grcLibrary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvLibrary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl grcLibrary;
+        private DevExpress.XtraGrid.Views.Grid.GridView grvLibrary;
+        private System.Windows.Forms.BindingSource libraryBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colLibraryId;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colSpecializedin;
+        private DevExpress.XtraGrid.Columns.GridColumn colLocation;
+        private DevExpress.XtraGrid.Columns.GridColumn colOwns;
+        private DevExpress.XtraGrid.Columns.GridColumn colRents;
     }
 }
