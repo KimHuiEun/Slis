@@ -29,12 +29,22 @@ namespace SlisDevexpress
         /// </summary>
         private void InitializeComponent()
         {
+            this.locationSelectionControl1 = new SlisDevexpress.UserControls.LocationSelectionControl();
             this.SuspendLayout();
+            // 
+            // locationSelectionControl1
+            // 
+            this.locationSelectionControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.locationSelectionControl1.Location = new System.Drawing.Point(0, 0);
+            this.locationSelectionControl1.Name = "locationSelectionControl1";
+            this.locationSelectionControl1.Size = new System.Drawing.Size(884, 51);
+            this.locationSelectionControl1.TabIndex = 0;
             // 
             // LibraryDetailsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.locationSelectionControl1);
             this.Name = "LibraryDetailsControl";
             this.Size = new System.Drawing.Size(884, 547);
             this.ResumeLayout(false);
@@ -42,5 +52,7 @@ namespace SlisDevexpress
         }
 
         #endregion
+
+        private UserControls.LocationSelectionControl locationSelectionControl1;
     }
 }
