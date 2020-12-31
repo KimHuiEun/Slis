@@ -212,7 +212,6 @@
     <EmbeddedResource Include="UserControls\LocationSelectionControl.resx">
       <DependentUpon>LocationSelectionControl.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\Slis.Data.Library.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -231,6 +230,9 @@
       <Project>{a39ebee3-9f08-4eb8-b45f-3eec3dd659ae}</Project>
       <Name>Slis.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

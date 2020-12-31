@@ -31,12 +31,6 @@ namespace SlisDevexpress
         {
             this.grcLibrary = new DevExpress.XtraGrid.GridControl();
             this.grvLibrary = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colLibraryId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSpecializedin = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLocation = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOwns = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRents = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grcLibrary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvLibrary)).BeginInit();
             this.SuspendLayout();
@@ -54,69 +48,8 @@ namespace SlisDevexpress
             // 
             // grvLibrary
             // 
-            this.grvLibrary.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colLibraryId,
-            this.colName,
-            this.colSpecializedin,
-            this.colLocation,
-            this.colOwns,
-            this.colRents});
             this.grvLibrary.GridControl = this.grcLibrary;
             this.grvLibrary.Name = "grvLibrary";
-            // 
-            // colLibraryId
-            // 
-            this.colLibraryId.FieldName = "LibraryId";
-            this.colLibraryId.MinWidth = 25;
-            this.colLibraryId.Name = "colLibraryId";
-            this.colLibraryId.Visible = true;
-            this.colLibraryId.VisibleIndex = 0;
-            this.colLibraryId.Width = 94;
-            // 
-            // colName
-            // 
-            this.colName.FieldName = "Name";
-            this.colName.MinWidth = 25;
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 1;
-            this.colName.Width = 94;
-            // 
-            // colSpecializedin
-            // 
-            this.colSpecializedin.FieldName = "Specializedin";
-            this.colSpecializedin.MinWidth = 25;
-            this.colSpecializedin.Name = "colSpecializedin";
-            this.colSpecializedin.Visible = true;
-            this.colSpecializedin.VisibleIndex = 2;
-            this.colSpecializedin.Width = 94;
-            // 
-            // colLocation
-            // 
-            this.colLocation.FieldName = "Location";
-            this.colLocation.MinWidth = 25;
-            this.colLocation.Name = "colLocation";
-            this.colLocation.Visible = true;
-            this.colLocation.VisibleIndex = 3;
-            this.colLocation.Width = 94;
-            // 
-            // colOwns
-            // 
-            this.colOwns.FieldName = "Owns";
-            this.colOwns.MinWidth = 25;
-            this.colOwns.Name = "colOwns";
-            this.colOwns.Visible = true;
-            this.colOwns.VisibleIndex = 4;
-            this.colOwns.Width = 94;
-            // 
-            // colRents
-            // 
-            this.colRents.FieldName = "Rents";
-            this.colRents.MinWidth = 25;
-            this.colRents.Name = "colRents";
-            this.colRents.Visible = true;
-            this.colRents.VisibleIndex = 5;
-            this.colRents.Width = 94;
             // 
             // LibraryListControl
             // 
@@ -135,11 +68,5 @@ namespace SlisDevexpress
 
         private DevExpress.XtraGrid.GridControl grcLibrary;
         private DevExpress.XtraGrid.Views.Grid.GridView grvLibrary;
-        private DevExpress.XtraGrid.Columns.GridColumn colLibraryId;
-        private DevExpress.XtraGrid.Columns.GridColumn colName;
-        private DevExpress.XtraGrid.Columns.GridColumn colSpecializedin;
-        private DevExpress.XtraGrid.Columns.GridColumn colLocation;
-        private DevExpress.XtraGrid.Columns.GridColumn colOwns;
-        private DevExpress.XtraGrid.Columns.GridColumn colRents;
     }
 }
