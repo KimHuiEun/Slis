@@ -50,7 +50,7 @@ namespace SlisDevexpress.UserControls
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Size = new System.Drawing.Size(136, 24);
+            this.lookUpEdit1.Size = new System.Drawing.Size(129, 24);
             this.lookUpEdit1.TabIndex = 1;
             // 
             // LocationSelectionControl
@@ -61,6 +61,7 @@ namespace SlisDevexpress.UserControls
             this.Controls.Add(this.labelControl1);
             this.Name = "LocationSelectionControl";
             this.Size = new System.Drawing.Size(943, 51);
+            this.Load += new System.EventHandler(this.LocationSelectionControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

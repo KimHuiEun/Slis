@@ -16,5 +16,10 @@ namespace SlisDevexpress.UserControls
         {
             InitializeComponent();
         }
+
+        private void LocationSelectionControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

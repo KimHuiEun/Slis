@@ -149,10 +149,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\LibrarySelectionControl.cs" />
-    <Compile Include="UserControls\LibrarySelectionControl.Designer.cs">
-      <DependentUpon>LibrarySelectionControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,9 +191,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\2.LibraryInfo\PopulationInfoControl.resx">
       <DependentUpon>PopulationInfoControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\LibrarySelectionControl.resx">
-      <DependentUpon>LibrarySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LocationSelectionControl.resx">
       <DependentUpon>LocationSelectionControl.cs</DependentUpon>

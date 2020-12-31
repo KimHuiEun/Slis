@@ -50,22 +50,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dao\Dao.cs" />
+    <Compile Include="Dao.cs" />
     <Compile Include="EFLibrary\BaseDao.cs" />
     <Compile Include="Book.cs">
       <DependentUpon>SlisModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dao\BookDao.cs" />
+    <Compile Include="BookDao.cs" />
     <Compile Include="EFLibrary\DbContextCreator.cs" />
     <Compile Include="EFLibrary\DualKeyDao.cs" />
     <Compile Include="Library.cs">
       <DependentUpon>SlisModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dao\LibraryDao.cs" />
+    <Compile Include="LibraryDao.cs" />
     <Compile Include="Own.cs">
       <DependentUpon>SlisModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dao\OwnDao.cs" />
+    <Compile Include="OwnDao.cs" />
     <Compile Include="Population.cs">
       <DependentUpon>SlisModel.tt</DependentUpon>
     </Compile>
@@ -73,7 +73,7 @@
     <Compile Include="Rent.cs">
       <DependentUpon>SlisModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dao\RentDao.cs" />
+    <Compile Include="RentDao.cs" />
     <Compile Include="EFLibrary\SingleKeyDao.cs" />
     <Compile Include="SlisModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -120,6 +120,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Dao\" />
+    <Folder Include="EFLibrary\" />
     <Folder Include="Entities\" />
     <Folder Include="Models\" />
   </ItemGroup>
