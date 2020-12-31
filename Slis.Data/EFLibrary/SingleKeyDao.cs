@@ -1,4 +1,4 @@
-﻿using EFDemo.Data;
+﻿using Slis.Data;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
