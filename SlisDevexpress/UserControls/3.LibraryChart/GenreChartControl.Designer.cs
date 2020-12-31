@@ -29,10 +29,30 @@ namespace SlisDevexpress
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.locationSelectionControl1 = new SlisDevexpress.UserControls.LocationSelectionControl();
+            this.SuspendLayout();
+            // 
+            // locationSelectionControl1
+            // 
+            this.locationSelectionControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.locationSelectionControl1.Location = new System.Drawing.Point(0, 0);
+            this.locationSelectionControl1.Name = "locationSelectionControl1";
+            this.locationSelectionControl1.Size = new System.Drawing.Size(923, 51);
+            this.locationSelectionControl1.TabIndex = 1;
+            // 
+            // GenreChartControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.locationSelectionControl1);
+            this.Name = "GenreChartControl";
+            this.Size = new System.Drawing.Size(923, 629);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private UserControls.LocationSelectionControl locationSelectionControl1;
     }
 }
