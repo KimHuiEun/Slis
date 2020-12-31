@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Slis.Data
 {
-    public partial class Rent
+    public partial class Own
     {
         public override string ToString()
         {
-            return $"{RentId} / {RentDate} / {LibraryId} / {Isbn} / {ReturnedDate}";
+            return $"{Isbn} / {LibraryId} / {Quantity}";
         }
     }
 }
