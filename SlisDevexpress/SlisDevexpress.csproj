@@ -44,6 +44,7 @@
     <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.2.UI, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -51,6 +52,7 @@
     <Reference Include="DevExpress.XtraCharts.v20.2.Extensions, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v20.2.UI, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v20.2.Wizard, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -64,8 +66,10 @@
     <Reference Include="DevExpress.XtraTreeList.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
@@ -145,9 +149,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\LibrarySelectionControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="UserControls\LibrarySelectionControl.cs" />
     <Compile Include="UserControls\LibrarySelectionControl.Designer.cs">
       <DependentUpon>LibrarySelectionControl.cs</DependentUpon>
     </Compile>
@@ -159,15 +161,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\TitleSearchControl.cs">
+    <Compile Include="UserControls\LocationSelectionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControls\LocationSelectionControl.Designer.cs">
+      <DependentUpon>LocationSelectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TitleSearchControl.cs" />
     <Compile Include="UserControls\TitleSearchControl.Designer.cs">
       <DependentUpon>TitleSearchControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="TotalLibraryForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="TotalLibraryForm.cs" />
     <Compile Include="TotalLibraryForm.Designer.cs">
       <DependentUpon>TotalLibraryForm.cs</DependentUpon>
     </Compile>
@@ -186,8 +190,17 @@
     <EmbeddedResource Include="UserControls\2.LibraryInfo\BestRentalControl.resx">
       <DependentUpon>BestRentalControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\2.LibraryInfo\BooksInfoControl.resx">
+      <DependentUpon>BooksInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\2.LibraryInfo\PopulationInfoControl.resx">
+      <DependentUpon>PopulationInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LibrarySelectionControl.resx">
       <DependentUpon>LibrarySelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LocationSelectionControl.resx">
+      <DependentUpon>LocationSelectionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TitleSearchControl.resx">
       <DependentUpon>TitleSearchControl.cs</DependentUpon>
