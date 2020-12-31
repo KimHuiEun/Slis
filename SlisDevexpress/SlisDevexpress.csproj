@@ -84,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserControls\TitleSearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TitleSearchControl.Designer.cs">
+      <DependentUpon>TitleSearchControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\3.LibraryChart\AgeGenderChartControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -163,14 +169,6 @@
     <Compile Include="UserControls\LocationSelectionControl.Designer.cs">
       <DependentUpon>LocationSelectionControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\TitleSearchControl.cs" />
-    <Compile Include="UserControls\TitleSearchControl.Designer.cs">
-      <DependentUpon>TitleSearchControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TotalLibraryForm.cs" />
-    <Compile Include="TotalLibraryForm.Designer.cs">
-      <DependentUpon>TotalLibraryForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +177,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TitleSearchControl.resx">
+      <DependentUpon>TitleSearchControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\1.SeoulLibraryList\LibraryListControl.resx">
       <DependentUpon>LibraryListControl.cs</DependentUpon>
@@ -194,12 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LocationSelectionControl.resx">
       <DependentUpon>LocationSelectionControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\TitleSearchControl.resx">
-      <DependentUpon>TitleSearchControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TotalLibraryForm.resx">
-      <DependentUpon>TotalLibraryForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
