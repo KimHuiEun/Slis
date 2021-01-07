@@ -72,7 +72,7 @@ namespace Slis.ConsoleUI
                 population.LibraryId = _libraries[tokens[0]]; // "종로구"
                 
 
-                population.IsMale = tokens[1] == "남자";
+                //
 
                 //if (j == 2) population.IsMale = tokens[1] == "여자";
                 
