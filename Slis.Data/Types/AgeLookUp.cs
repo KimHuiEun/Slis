@@ -8,6 +8,9 @@ namespace Slis.Data.Types
 {
     public class AgeLookUp
     {
+        /// <summary>
+        /// 싱글톤 적용
+        /// </summary>
         private AgeLookUp()
         {
         }
@@ -31,6 +34,16 @@ namespace Slis.Data.Types
             {
                 case 0:
                     return "10대 미만";
+                case 1:
+                    return "10대";
+                case 2:
+                    return "20대";
+                case 3:
+                    return "30대";
+                case 4:
+                    return "40대";
+                case 5:
+                    return "50대";
                 case 6:
                     return "60대 이상";
                 default:
@@ -38,6 +51,11 @@ namespace Slis.Data.Types
             }
         }
 
+        /// <summary>
+        /// 인덱서를 사용하여 열거형 ageCode를 GetName에 적용.
+        /// </summary>
+        /// <param name="ageCode"></param>
+        /// <returns></returns>
         public string this[int ageCode]
         {
             get

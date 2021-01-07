@@ -1,4 +1,5 @@
 ﻿using Slis.Data;
+using Slis.Data.Types;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -46,13 +47,17 @@ namespace Slis.ConsoleUI
                         Dao.Population.Insert(population);
                 }
             }
+            
+            //LookUp : 테이블을 조회하는 것
+            //Console.WriteLine(AgeLookUp.Instance.GetName(4));  
+            //Console.WriteLine(AgeLookUp.Instance[4]); //인덱서를 사용하여 case4(40대)를 조회
         }
+
 
         /// <summary>
         /// 엑셀값불러오기 위한 데이터 넣기.
         /// </summary>
         /// <param name="line"></param>
-        /// <param name="line2"></param>
         /// <returns></returns>
         private List<Population> ParseLine(string line)
         {
@@ -80,5 +85,7 @@ namespace Slis.ConsoleUI
 
             return populations;
         }
+
+
     }
 }

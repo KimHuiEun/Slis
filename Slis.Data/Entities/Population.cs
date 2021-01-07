@@ -9,11 +9,11 @@ namespace Slis.Data
 {
     public partial class Population
     {
-        public string AgeText
+        public string AgeText //TODO : 차트에서 사용해야하는것.
         {
             get
             {
-                return AgeLookUp.Instance[AgeCode];
+                return AgeLookUp.Instance[AgeCode]; //Instance[] : 인덱서사용
             }
         }
 
