@@ -17,9 +17,8 @@ namespace Slis.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Library()
         {
-            this.Owns = new HashSet<Own>();
-            this.Rents = new HashSet<Rent>();
             this.Populations = new HashSet<Population>();
+            this.Owns = new HashSet<Own>();
         }
     
         public int LibraryId { get; set; }
@@ -30,10 +29,8 @@ namespace Slis.Data
         public string SpecializedIn { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Own> Owns { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rent> Rents { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Population> Populations { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Own> Owns { get; set; }
     }
 }

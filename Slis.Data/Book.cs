@@ -18,19 +18,17 @@ namespace Slis.Data
         public Book()
         {
             this.Owns = new HashSet<Own>();
-            this.Rents = new HashSet<Rent>();
         }
     
         public string Isbn { get; set; }
+        public string SetIsbn { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string Publisher { get; set; }
-        public System.DateTime PublicationDate { get; set; }
-        public string SetIsbn { get; set; }
+        public int PublicationDate { get; set; }
+        public string Kdc { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Own> Owns { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rent> Rents { get; set; }
     }
 }

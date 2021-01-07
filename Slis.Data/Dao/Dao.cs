@@ -14,8 +14,6 @@ namespace Slis.Data
 
         public static PopulationDao Population { get; } = new PopulationDao();
 
-        public static RentDao Rent { get; } = new RentDao();
-
         public static OwnDao Own { get; } = new OwnDao();
     }
 }

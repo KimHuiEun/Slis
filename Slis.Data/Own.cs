@@ -16,7 +16,8 @@ namespace Slis.Data
     {
         public string Isbn { get; set; }
         public int LibraryId { get; set; }
-        public int Quantity { get; set; }
+        public int CopyCount { get; set; }
+        public int RentCount { get; set; }
     
         public virtual Library Library { get; set; }
         public virtual Book Book { get; set; }

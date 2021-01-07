@@ -71,15 +71,13 @@ namespace Slis.ConsoleUI
                 Population population = new Population();
                 population.LibraryId = _libraries[tokens[0]]; // "종로구"
                 
-                if(tokens[1] == "남자") 
-                {
-                    population.IsMale = true;
-                }
-                //population.IsMale = tokens[1] == "남자";
+
+                population.IsMale = tokens[1] == "남자";
+
                 //if (j == 2) population.IsMale = tokens[1] == "여자";
                 
 
-                for (int i = 2; i < 9; i++)  //교수님코드 : int i = 2; i < 9; i++
+                for (int i = 2; i < 9; i++)
                 {
                     population.AgeCode = i + 1;
                     population.Value = Convert.ToInt32(Convert.ToDecimal(tokens[i])); 

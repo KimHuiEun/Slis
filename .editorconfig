@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0006: 'C:\git3\Slis.Data\bin\Debug\Slis.Data.dll' 메타데이터 파일을 찾을 수 없습니다.
+dotnet_diagnostic.CS0006.severity = error

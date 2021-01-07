@@ -10,7 +10,7 @@ namespace Slis.Data
     {
         public override string ToString()
         {
-            return $"{Isbn} / {LibraryId} / {Quantity}";
+            return $"{Isbn} / {LibraryId} / {CopyCount} / {RentCount}";
         }
     }
 }

@@ -26,9 +26,8 @@ namespace Slis.Data
         }
     
         public virtual DbSet<Library> Libraries { get; set; }
-        public virtual DbSet<Own> Owns { get; set; }
-        public virtual DbSet<Rent> Rents { get; set; }
-        public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Population> Populations { get; set; }
+        public virtual DbSet<Own> Owns { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
     }
 }

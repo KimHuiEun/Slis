@@ -64,7 +64,6 @@
     <Compile Include="Entities\Library.cs" />
     <Compile Include="Entities\Own.cs" />
     <Compile Include="Entities\Population.cs" />
-    <Compile Include="Entities\Rent.cs" />
     <Compile Include="Library.cs">
       <DependentUpon>SlisModel.tt</DependentUpon>
     </Compile>
@@ -78,10 +77,6 @@
     </Compile>
     <Compile Include="Dao\PopulationDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rent.cs">
-      <DependentUpon>SlisModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Dao\RentDao.cs" />
     <Compile Include="EFLibrary\SingleKeyDao.cs" />
     <Compile Include="SlisModel.Context.cs">
       <AutoGen>True</AutoGen>
