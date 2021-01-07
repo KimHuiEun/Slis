@@ -1,6 +1,7 @@
 ﻿using Slis.Data;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,58 +34,47 @@ namespace Slis.ConsoleUI
 
         public void Write(string filePath)
         {
-            string[] lines = null;
+            string[] lines = File.ReadAllLines(filePath);
 
-            for (int i = 1; i < lines.Length; i += 2) //남자, 여자
+            for (int i = 4; i < lines.Length; i += 3) //남자, 여자
             {
-                List<Population> populations = Parse(lines[i], lines[i + 1]);
-
-                foreach (var population in populations)
+                for (int j = 1; j <= 2; j++)
                 {
-                    Dao.Population.Insert(population);
+                    var list = ParseLine(lines[i + j]);
+
+                    foreach (var population in list)
+                        Dao.Population.Insert(population);
                 }
             }
-            
         }
 
         /// <summary>
         /// 엑셀값불러오기 위한 데이터 넣기.
         /// </summary>
-        /// <param name="line1"></param>
+        /// <param name="line"></param>
         /// <param name="line2"></param>
         /// <returns></returns>
-        private List<Population> Parse(string line1, string line2) //lines1 = 남자, lines2 = 여자.
+        private List<Population> ParseLine(string line)
         {
-
             //Dictionary<string, int> libraries = Dao.Library.ToDictionary
             //사전에 정의를 준다.
             //종로구 , 1                                                                            
             //이 코드를 사용할 경우 25개의 각 구역을 매번 해줘야하므로 필드를 만들어준다. 32nd줄
 
-            List<Population> populations = new List<Population>();
-
-            string[] tokens = line1.Split('\t');
+            string[] tokens = line.Split('\t');
             //종로구	남자	 71,623.50	4,253.00	6,051.50	11,707.50	10,104.00	10,973.50	12,279.50	16,254.50
 
-            for (int j = 1; j < 3; j++)
+            
+            List<Population> populations = new List<Population>();
+
+            for (int i = 3; i < tokens.Length; i++)
             {
                 Population population = new Population();
-                population.LibraryId = _libraries[tokens[0]]; // "종로구"
-                
-
+                population.LibraryId = _libraries[tokens[0]];
                 population.IsMale = tokens[1] == "남자";
+                population.AgeCode = i - 3;
+                population.Value = Convert.ToInt32(tokens[i]);
 
-                //if (j == 2) population.IsMale = tokens[1] == "여자";
-                
-
-                for (int i = 2; i < 9; i++)
-                {
-                    population.AgeCode = i + 1;
-                    population.Value = Convert.ToInt32(Convert.ToDecimal(tokens[i])); 
-                }
-
-                //population.Value = _libraries[tokens[2]];
-                
                 populations.Add(population);
             }
 

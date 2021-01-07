@@ -2,6 +2,7 @@
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
 using Slis.Data;
+using Slis.Data.Types;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -16,6 +17,11 @@ namespace Slis.ConsoleUI
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(AgeLookUp.Instance.GetName(4));
+            Console.WriteLine(AgeLookUp.Instance[4]);
+
+
+
             var filePathes = Directory.GetFiles(@"C:\Users\kcci\Desktop\도서관정보 필터링 완료", "*.txt");
 
             foreach (var filePath in filePathes)
