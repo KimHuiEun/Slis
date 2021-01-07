@@ -93,6 +93,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SlisModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Types\AgeLookUp.cs" />
+    <Compile Include="Types\AgeRange.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="SlisModel.edmx">
