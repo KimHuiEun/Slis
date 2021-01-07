@@ -12,6 +12,18 @@ namespace Slis.Data
     {
         internal OwnDao() { }
 
+        public bool Exists(string isbn, int libraryId)
+        {
+            using (var context = DbContextCreator.Create())
+            {
+                var query = from x in context.Owns
+                            where x.Isbn == isbn && x.LibraryId == libraryId
+                            select x;
+
+                return query.Count() > 0;
+            }
+        }
+
         //protected override Expression<Func<Own, int, int>> KeySelector =>   
     }
 }

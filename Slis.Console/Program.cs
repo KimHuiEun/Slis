@@ -12,12 +12,10 @@ using System.Threading.Tasks;
 
 namespace Slis.ConsoleUI
 {
-    class Program
+    public class Program
     {
-
         static void Main(string[] args)
         {
-
             var filePathes = Directory.GetFiles(@"C:\Users\kcci\Desktop\도서관정보 필터링 완료", "*.txt");
 
             foreach (var filePath in filePathes)
@@ -43,15 +41,16 @@ namespace Slis.ConsoleUI
                 {
                     ProcessLine(book, libraryId);
                 }
-
             }
+
+            File.Delete(filePath);
         }
 
         private static void ProcessLine(BookItem book, int libraryId)
         {
             try
             {
-                Console.WriteLine("Inserting...");
+                Console.WriteLine($"Inserting...[ISBN]:{book.Isbn}, [LibraryId]:{libraryId}");
                 // Book 테이블에 없으면 추가
                 if (Dao.Book.Exists(book.Isbn) == false)
                 {
@@ -64,8 +63,11 @@ namespace Slis.ConsoleUI
                     book1.PublicationDate = book.Year;
                     book1.Kdc = book.Kdc;
                     Dao.Book.Insert(book1);
+                }
 
-                    // Own 테이블에 없으면 추가
+                // Own 테이블에 없으면 추가
+                if (Dao.Own.Exists(book.Isbn, libraryId) == false)
+                {
                     Own own = new Own();
                     own.Isbn = book.Isbn;
                     own.LibraryId = libraryId;
@@ -74,13 +76,11 @@ namespace Slis.ConsoleUI
                     Dao.Own.Insert(own);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("Error");
+                Console.WriteLine(ex.Message);
+                throw ex;
             }
-            
-
-
         }
     }
 
