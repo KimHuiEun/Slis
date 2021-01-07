@@ -26,5 +26,17 @@ namespace EFLibrary
             if (entity != null)
                 Delete(entity);
         }
+/*
+        public bool Exists(K1 key1, K2 key2)
+        {
+            using (var context = DbContextCreator.Create())
+            {
+                T entity = GetByPK(key1, key2);
+
+                return context
+                    .Set<T>()
+                    .Count() > 0;
+            }
+        }*/
     }
 }

@@ -24,6 +24,6 @@ namespace Slis.Data
             }
         }
 
-        //protected override Expression<Func<Own, int, int>> KeySelector =>   
+        //protected override Expression<Func<Own, int, int>> KeySelector => x => x.isbn && x.LibraryId
     }
 }
