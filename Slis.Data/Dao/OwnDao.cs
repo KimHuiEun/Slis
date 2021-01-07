@@ -23,7 +23,5 @@ namespace Slis.Data
                 return query.Count() > 0;
             }
         }
-
-        //protected override Expression<Func<Own, int, int>> KeySelector => x => x.isbn && x.LibraryId
     }
 }

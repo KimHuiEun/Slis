@@ -21,10 +21,7 @@ namespace EFLibrary
 
         public bool Exists(K key)
         {
-            using (DbContext context = DbContextCreator.Create())
-            {
-                return context.Set<T>().Count() > 0;
-            }
+            return GetByPK(key) != null;
         }
 
         public void DeleteByPK(K key)
