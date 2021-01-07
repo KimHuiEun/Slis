@@ -21,7 +21,6 @@ namespace Slis.ConsoleUI
             Console.WriteLine(AgeLookUp.Instance[4]);
 
 
-
             var filePathes = Directory.GetFiles(@"C:\Users\kcci\Desktop\도서관정보 필터링 완료", "*.txt");
 
             foreach (var filePath in filePathes)
@@ -67,7 +66,7 @@ namespace Slis.ConsoleUI
                     book1.Author = book.Author;
                     book1.Publisher = book.Publisher;
                     book1.PublicationDate = book.Year;
-                    book1.Kdc = book.Kdc;
+                    book1.Kdc = book.Kdc.Split('.')[0];
                     Dao.Book.Insert(book1);
                 }
 

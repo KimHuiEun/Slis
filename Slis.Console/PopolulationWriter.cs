@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Slis.ConsoleUI
 {
-    public class PopolulationWriter
+    public class PopolulationWriter     //서울시인구통계파일에서 인구 하나하나 읽어옴
     {
         #region singleton 
         private PopolulationWriter()
@@ -37,7 +37,8 @@ namespace Slis.ConsoleUI
         {
             string[] lines = File.ReadAllLines(filePath);
 
-            for (int i = 4; i < lines.Length; i += 3) //남자, 여자
+            //1구를 읽은 for문->각 구의 인구를 population으로 넘겨줌.
+            for (int i = 4; i < lines.Length; i += 3) //윗줄 합계3줄 제외하고 4번째줄부터 읽음. 모든줄 끝날때까지. 한구는 합계,남,여 3줄이므로 3줄씩
             {
                 for (int j = 1; j <= 2; j++)
                 {
@@ -47,7 +48,7 @@ namespace Slis.ConsoleUI
                         Dao.Population.Insert(population);
                 }
             }
-            
+
             //LookUp : 테이블을 조회하는 것
             //Console.WriteLine(AgeLookUp.Instance.GetName(4));  
             //Console.WriteLine(AgeLookUp.Instance[4]); //인덱서를 사용하여 case4(40대)를 조회
@@ -69,18 +70,19 @@ namespace Slis.ConsoleUI
             string[] tokens = line.Split('\t');
             //종로구	남자	 71,623.50	4,253.00	6,051.50	11,707.50	10,104.00	10,973.50	12,279.50	16,254.50
 
-            
-            List<Population> populations = new List<Population>();
 
+            List<Population> populations = new List<Population>();  //인구 List
+
+            //연령대별 인구 7칸 읽기 -> 인구 7개 생성 (ex. 중랑구 여자 20대 인구 => 인구1개)
             for (int i = 3; i < tokens.Length; i++)
             {
                 Population population = new Population();
                 population.LibraryId = _libraries[tokens[0]];
-                population.IsMale = tokens[1] == "남자";
+                population.IsMale = tokens[1] == "남자";      //IsMale은 bool형이므로 "남자"일 경우 ture, 여자일 경우 false로 받는다.
                 population.AgeCode = i - 3;
-                population.Value = Convert.ToInt32(tokens[i]);
+                population.Value = Convert.ToInt32(tokens[i]);      //셀 한개에 담겨있는 인구값
 
-                populations.Add(population);
+                populations.Add(population);    //list에 읽은 인구 추가
             }
 
             return populations;

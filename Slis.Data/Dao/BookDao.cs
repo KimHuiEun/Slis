@@ -13,5 +13,6 @@ namespace Slis.Data
         internal BookDao() { }
 
         protected override Expression<Func<Book, string>> KeySelector => x => x.Isbn;
+
     }
 }
