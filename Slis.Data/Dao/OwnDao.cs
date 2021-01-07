@@ -12,6 +12,30 @@ namespace Slis.Data
     {
         internal OwnDao() { }
 
+        public List<Own> GetByIsbn(string isbn)
+        {
+            using (SlisEntities context = DbContextCreator.Create())
+            {
+                var query = from x in context.Owns
+                            where x.Isbn.Contains(isbn)
+                            select x;
+
+                return query.ToList();
+            }
+        }
+
+        public List<Own> GetByLibraryId(int libraryId)
+        {
+            using (SlisEntities context = DbContextCreator.Create())
+            {
+                var query = from x in context.Owns
+                            where x.LibraryId == libraryId
+                            select x;
+
+                return query.ToList();
+            }
+        }
+
         public bool Exists(string isbn, int libraryId)
         {
             using (var context = DbContextCreator.Create())
