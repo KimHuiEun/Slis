@@ -17,8 +17,8 @@ namespace Slis.ConsoleUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(AgeLookUp.Instance.GetName(4));
-            Console.WriteLine(AgeLookUp.Instance[4]);
+            //Console.WriteLine(AgeLookUp.Instance.GetName(4));
+            //Console.WriteLine(AgeLookUp.Instance[4]);
 
 
             var filePathes = Directory.GetFiles(@"C:\Users\kcci\Desktop\도서관정보 필터링 완료", "*.txt");
@@ -55,7 +55,7 @@ namespace Slis.ConsoleUI
         {
             try
             {
-                Console.WriteLine($"Inserting...[ISBN]:{book.Isbn}, [LibraryId]:{libraryId}");
+                
                 // Book 테이블에 없으면 추가
                 if (Dao.Book.Exists(book.Isbn) == false)
                 {
@@ -73,13 +73,16 @@ namespace Slis.ConsoleUI
                 // Own 테이블에 없으면 추가
                 if (Dao.Own.Exists(book.Isbn, libraryId) == false)
                 {
-                    Own own = new Own();
+                    Own own = new Own();    
                     own.Isbn = book.Isbn;
                     own.LibraryId = libraryId;
                     own.CopyCount = book.CopyCount;
                     own.RentCount = book.RentCount;
                     Dao.Own.Insert(own);
                 }
+
+                Console.WriteLine($@"Inserting...[ISBN]:{book.Isbn}, [LibraryId]:{libraryId} ,
+                                                    [Own`s CopyCount] : {book.CopyCount}, [Own`s RentCount] : {book.RentCount}, ");
             }
             catch (Exception ex)
             {

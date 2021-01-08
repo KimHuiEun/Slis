@@ -30,24 +30,24 @@ namespace SlisDevexpress.UserControls
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.teLibraryName = new DevExpress.XtraEditors.TextEdit();
+            this.cbLibraryId = new DevExpress.XtraEditors.ComboBoxEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teLibraryName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbLibraryId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.comboBoxEdit1);
+            this.layoutControl1.Controls.Add(this.teLibraryName);
+            this.layoutControl1.Controls.Add(this.cbLibraryId);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -55,6 +55,26 @@ namespace SlisDevexpress.UserControls
             this.layoutControl1.Size = new System.Drawing.Size(943, 51);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // teLibraryName
+            // 
+            this.teLibraryName.Location = new System.Drawing.Point(392, 12);
+            this.teLibraryName.Name = "teLibraryName";
+            this.teLibraryName.Properties.ReadOnly = true;
+            this.teLibraryName.Size = new System.Drawing.Size(539, 24);
+            this.teLibraryName.StyleController = this.layoutControl1;
+            this.teLibraryName.TabIndex = 6;
+            // 
+            // cbLibraryId
+            // 
+            this.cbLibraryId.Location = new System.Drawing.Point(99, 12);
+            this.cbLibraryId.Name = "cbLibraryId";
+            this.cbLibraryId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbLibraryId.Size = new System.Drawing.Size(202, 24);
+            this.cbLibraryId.StyleController = this.layoutControl1;
+            this.cbLibraryId.TabIndex = 4;
+            this.cbLibraryId.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
             // Root
             // 
@@ -67,37 +87,18 @@ namespace SlisDevexpress.UserControls
             this.Root.Size = new System.Drawing.Size(943, 51);
             this.Root.TextVisible = false;
             // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(99, 12);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(202, 24);
-            this.comboBoxEdit1.StyleController = this.layoutControl1;
-            this.comboBoxEdit1.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.comboBoxEdit1;
+            this.layoutControlItem1.Control = this.cbLibraryId;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(293, 31);
             this.layoutControlItem1.Text = "지역 구 선택";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(75, 18);
             // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(392, 12);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.ReadOnly = true;
-            this.textEdit1.Size = new System.Drawing.Size(539, 24);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 6;
-            // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.textEdit1;
+            this.layoutControlItem3.Control = this.teLibraryName;
             this.layoutControlItem3.Location = new System.Drawing.Point(293, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(630, 31);
@@ -111,13 +112,12 @@ namespace SlisDevexpress.UserControls
             this.Controls.Add(this.layoutControl1);
             this.Name = "LocationSelectionControl";
             this.Size = new System.Drawing.Size(943, 51);
-            this.Load += new System.EventHandler(this.LocationSelectionControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.teLibraryName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbLibraryId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
@@ -126,8 +126,8 @@ namespace SlisDevexpress.UserControls
         #endregion
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.TextEdit teLibraryName;
+        private DevExpress.XtraEditors.ComboBoxEdit cbLibraryId;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
