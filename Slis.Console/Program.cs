@@ -42,21 +42,22 @@ namespace Slis.ConsoleUI
 
                 List<BookItem> books = csv.GetRecords<BookItem>().ToList();
 
+                int index = 0;
                 foreach (var book in books)
                 {
-                    ProcessLine(book, libraryId);
+                    index++;
+                    ProcessLine(book, libraryId, index);
                 }
             }
 
             File.Delete(filePath);
         }
 
-        private static void ProcessLine(BookItem book, int libraryId)
+        private static void ProcessLine(BookItem book, int libraryId, int index)
         {
             try
             {
-                Console.WriteLine($@"Inserting...[ISBN]:{book.Isbn}, [LibraryId]:{libraryId} , [Own`s CopyCount] : {book.CopyCount}, [Own`s RentCount] : {book.RentCount}, ");
-
+                Console.WriteLine($@"Inserting...[ISBN]:{book.Isbn}, [LibraryId]:{libraryId} , {index}번째");
                 // Book 테이블에 없으면 추가
                 if (Dao.Book.Exists(book.Isbn) == false)
                 {
