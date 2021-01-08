@@ -55,7 +55,8 @@ namespace Slis.ConsoleUI
         {
             try
             {
-                
+                Console.WriteLine($@"Inserting...[ISBN]:{book.Isbn}, [LibraryId]:{libraryId} , [Own`s CopyCount] : {book.CopyCount}, [Own`s RentCount] : {book.RentCount}, ");
+
                 // Book 테이블에 없으면 추가
                 if (Dao.Book.Exists(book.Isbn) == false)
                 {
@@ -81,8 +82,7 @@ namespace Slis.ConsoleUI
                     Dao.Own.Insert(own);
                 }
 
-                Console.WriteLine($@"Inserting...[ISBN]:{book.Isbn}, [LibraryId]:{libraryId} ,
-                                                    [Own`s CopyCount] : {book.CopyCount}, [Own`s RentCount] : {book.RentCount}, ");
+                
             }
             catch (Exception ex)
             {
