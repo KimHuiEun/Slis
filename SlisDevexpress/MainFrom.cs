@@ -1,18 +1,18 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SlisDevexpress
 {
-    public partial class NewBooksBuyingControl : UserControl
+    public partial class MainFrom : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
-        public NewBooksBuyingControl()
+        public MainFrom()
         {
             InitializeComponent();
         }

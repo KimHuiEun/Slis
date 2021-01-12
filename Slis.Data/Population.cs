@@ -14,10 +14,10 @@ namespace Slis.Data
     
     public partial class Population
     {
-        public int AgeCode { get; set; }
-        public bool IsMale { get; set; }
-        public int Value { get; set; }
         public int LibraryId { get; set; }
+        public bool IsMale { get; set; }
+        public int AgeCode { get; set; }
+        public int Value { get; set; }
     
         public virtual Library Library { get; set; }
     }

@@ -23,10 +23,10 @@
           </Key>
           <Property Name="LibraryId" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="HomePage" Type="nvarchar" MaxLength="500" />
+          <Property Name="HomePage" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Address" Type="nvarchar" MaxLength="1000" />
-          <Property Name="SpecializedIn" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="SpecializedIn" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Own">
           <Key>
@@ -112,86 +112,23 @@
     <edmx:ConceptualModels>
       <Schema Namespace="SlisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="SlisEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Libraries" EntityType="SlisModel.Library" />
-          <EntitySet Name="Populations" EntityType="SlisModel.Population" />
-          <AssociationSet Name="FK_Population_Library" Association="SlisModel.FK_Population_Library">
-            <End Role="Library" EntitySet="Libraries" />
-            <End Role="Population" EntitySet="Populations" />
-          </AssociationSet>
-          <EntitySet Name="Owns" EntityType="SlisModel.Own" />
-          <AssociationSet Name="FK_Own_Library" Association="SlisModel.FK_Own_Library">
-            <End Role="Library" EntitySet="Libraries" />
-            <End Role="Own" EntitySet="Owns" />
-          </AssociationSet>
           <EntitySet Name="Books" EntityType="SlisModel.Book" />
+          <EntitySet Name="Libraries" EntityType="SlisModel.Library" />
+          <EntitySet Name="Owns" EntityType="SlisModel.Own" />
+          <EntitySet Name="Populations" EntityType="SlisModel.Population" />
           <AssociationSet Name="FK_Own_Book" Association="SlisModel.FK_Own_Book">
             <End Role="Book" EntitySet="Books" />
             <End Role="Own" EntitySet="Owns" />
           </AssociationSet>
-          </EntityContainer>
-        <EntityType Name="Library">
-          <Key>
-            <PropertyRef Name="LibraryId" />
-          </Key>
-          <Property Name="LibraryId" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HomePage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Location" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="SpecializedIn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Populations" Relationship="SlisModel.FK_Population_Library" FromRole="Library" ToRole="Population" />
-          <NavigationProperty Name="Owns" Relationship="SlisModel.FK_Own_Library" FromRole="Library" ToRole="Own" />
-        </EntityType>
-        <EntityType Name="Population">
-          <Key>
-            <PropertyRef Name="AgeCode" />
-            <PropertyRef Name="IsMale" />
-            <PropertyRef Name="LibraryId" />
-          </Key>
-          <Property Name="AgeCode" Type="Int32" Nullable="false" />
-          <Property Name="IsMale" Type="Boolean" Nullable="false" />
-          <Property Name="Value" Type="Int32" Nullable="false" />
-          <Property Name="LibraryId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Library" Relationship="SlisModel.FK_Population_Library" FromRole="Population" ToRole="Library" />
-        </EntityType>
-        <Association Name="FK_Population_Library">
-          <End Type="SlisModel.Library" Role="Library" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="SlisModel.Population" Role="Population" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Library">
-              <PropertyRef Name="LibraryId" />
-            </Principal>
-            <Dependent Role="Population">
-              <PropertyRef Name="LibraryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Own">
-          <Key>
-            <PropertyRef Name="Isbn" />
-            <PropertyRef Name="LibraryId" />
-          </Key>
-          <Property Name="Isbn" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
-          <Property Name="LibraryId" Type="Int32" Nullable="false" />
-          <Property Name="CopyCount" Type="Int32" Nullable="false" />
-          <Property Name="RentCount" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Library" Relationship="SlisModel.FK_Own_Library" FromRole="Own" ToRole="Library" />
-          <NavigationProperty Name="Book" Relationship="SlisModel.FK_Own_Book" FromRole="Own" ToRole="Book" />
-        </EntityType>
-        <Association Name="FK_Own_Library">
-          <End Type="SlisModel.Library" Role="Library" Multiplicity="1" />
-          <End Type="SlisModel.Own" Role="Own" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Library">
-              <PropertyRef Name="LibraryId" />
-            </Principal>
-            <Dependent Role="Own">
-              <PropertyRef Name="LibraryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+          <AssociationSet Name="FK_Own_Library" Association="SlisModel.FK_Own_Library">
+            <End Role="Library" EntitySet="Libraries" />
+            <End Role="Own" EntitySet="Owns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Population_Library" Association="SlisModel.FK_Population_Library">
+            <End Role="Library" EntitySet="Libraries" />
+            <End Role="Population" EntitySet="Populations" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Book">
           <Key>
             <PropertyRef Name="Isbn" />
@@ -204,6 +141,43 @@
           <Property Name="PublicationDate" Type="Int32" Nullable="false" />
           <Property Name="Kdc" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Owns" Relationship="SlisModel.FK_Own_Book" FromRole="Book" ToRole="Own" />
+        </EntityType>
+        <EntityType Name="Library">
+          <Key>
+            <PropertyRef Name="LibraryId" />
+          </Key>
+          <Property Name="LibraryId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HomePage" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="SpecializedIn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Owns" Relationship="SlisModel.FK_Own_Library" FromRole="Library" ToRole="Own" />
+          <NavigationProperty Name="Populations" Relationship="SlisModel.FK_Population_Library" FromRole="Library" ToRole="Population" />
+        </EntityType>
+        <EntityType Name="Own">
+          <Key>
+            <PropertyRef Name="Isbn" />
+            <PropertyRef Name="LibraryId" />
+          </Key>
+          <Property Name="Isbn" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="LibraryId" Type="Int32" Nullable="false" />
+          <Property Name="CopyCount" Type="Int32" Nullable="false" />
+          <Property Name="RentCount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Book" Relationship="SlisModel.FK_Own_Book" FromRole="Own" ToRole="Book" />
+          <NavigationProperty Name="Library" Relationship="SlisModel.FK_Own_Library" FromRole="Own" ToRole="Library" />
+        </EntityType>
+        <EntityType Name="Population">
+          <Key>
+            <PropertyRef Name="LibraryId" />
+            <PropertyRef Name="IsMale" />
+            <PropertyRef Name="AgeCode" />
+          </Key>
+          <Property Name="LibraryId" Type="Int32" Nullable="false" />
+          <Property Name="IsMale" Type="Boolean" Nullable="false" />
+          <Property Name="AgeCode" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Library" Relationship="SlisModel.FK_Population_Library" FromRole="Population" ToRole="Library" />
         </EntityType>
         <Association Name="FK_Own_Book">
           <End Type="SlisModel.Book" Role="Book" Multiplicity="1">
@@ -219,12 +193,51 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Own_Library">
+          <End Type="SlisModel.Library" Role="Library" Multiplicity="1" />
+          <End Type="SlisModel.Own" Role="Own" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library">
+              <PropertyRef Name="LibraryId" />
+            </Principal>
+            <Dependent Role="Own">
+              <PropertyRef Name="LibraryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Population_Library">
+          <End Type="SlisModel.Library" Role="Library" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SlisModel.Population" Role="Population" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library">
+              <PropertyRef Name="LibraryId" />
+            </Principal>
+            <Dependent Role="Population">
+              <PropertyRef Name="LibraryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SlisModelStoreContainer" CdmEntityContainer="SlisEntities">
+          <EntitySetMapping Name="Books">
+            <EntityTypeMapping TypeName="SlisModel.Book">
+              <MappingFragment StoreEntitySet="Book">
+                <ScalarProperty Name="Kdc" ColumnName="Kdc" />
+                <ScalarProperty Name="PublicationDate" ColumnName="PublicationDate" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SetIsbn" ColumnName="SetIsbn" />
+                <ScalarProperty Name="Isbn" ColumnName="Isbn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Libraries">
             <EntityTypeMapping TypeName="SlisModel.Library">
               <MappingFragment StoreEntitySet="Library">
@@ -234,16 +247,6 @@
                 <ScalarProperty Name="HomePage" ColumnName="HomePage" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Populations">
-            <EntityTypeMapping TypeName="SlisModel.Population">
-              <MappingFragment StoreEntitySet="Population">
-                <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
-                <ScalarProperty Name="IsMale" ColumnName="IsMale" />
-                <ScalarProperty Name="AgeCode" ColumnName="AgeCode" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -257,16 +260,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Books">
-            <EntityTypeMapping TypeName="SlisModel.Book">
-              <MappingFragment StoreEntitySet="Book">
-                <ScalarProperty Name="Kdc" ColumnName="Kdc" />
-                <ScalarProperty Name="PublicationDate" ColumnName="PublicationDate" />
-                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
-                <ScalarProperty Name="Author" ColumnName="Author" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="SetIsbn" ColumnName="SetIsbn" />
-                <ScalarProperty Name="Isbn" ColumnName="Isbn" />
+          <EntitySetMapping Name="Populations">
+            <EntityTypeMapping TypeName="SlisModel.Population">
+              <MappingFragment StoreEntitySet="Population">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="AgeCode" ColumnName="AgeCode" />
+                <ScalarProperty Name="IsMale" ColumnName="IsMale" />
+                <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

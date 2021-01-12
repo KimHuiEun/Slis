@@ -19,7 +19,7 @@ namespace Slis.Data
         public int CopyCount { get; set; }
         public int RentCount { get; set; }
     
-        public virtual Library Library { get; set; }
         public virtual Book Book { get; set; }
+        public virtual Library Library { get; set; }
     }
 }
