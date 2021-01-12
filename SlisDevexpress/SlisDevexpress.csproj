@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserControls\LocalDistrictSelectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LocalDistrictSelectionControl.Designer.cs">
+      <DependentUpon>LocalDistrictSelectionControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainFrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\LibrarySelectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LibrarySelectionControl.Designer.cs">
+      <DependentUpon>LibrarySelectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TitleSearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TitleSearchControl.Designer.cs">
+      <DependentUpon>TitleSearchControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControls\LocalDistrictSelectionControl.resx">
+      <DependentUpon>LocalDistrictSelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainFrom.resx">
       <DependentUpon>MainFrom.cs</DependentUpon>
     </EmbeddedResource>
@@ -72,6 +93,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\LibrarySelectionControl.resx">
+      <DependentUpon>LibrarySelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
